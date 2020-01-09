@@ -93,6 +93,12 @@ import { ElPanel } from './panel'
 import { ElSkeleton } from './skeleton'
 import { ElEmpty } from './empty'
 import { ElAffix } from './affix'
+import { ElSwitchEnhance } from './switch-enhance'
+
+import { ElInputIdCard } from './input-id-card'
+import { ElInputPhone } from './input-phone'
+import { ElInputEmail } from './input-email'
+import { ElInputUrl } from './input-url'
 
 export interface InstallationOptions {
   locale: any,
@@ -396,3 +402,18 @@ export class Empty extends ElEmpty {}
 
 /** Affix Component */
 export class Affix extends ElAffix {}
+
+/** InputIdCard Component */
+export class InputIdCard extends ElInputIdCard {}
+
+/** InputPhone Component */
+export class InputPhone extends ElInputPhone {}
+
+/** InputEmail Component */
+export class InputEmail extends ElInputEmail {}
+
+/** SwitchEnhance Component */
+export class SwitchEnhance extends ElSwitchEnhance {}
+
+/** InputUrl Component */
+export class InputUrl extends ElInputUrl {}

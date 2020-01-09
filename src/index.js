@@ -95,6 +95,11 @@ import Panel from '../packages/panel/index.js';
 import Skeleton from '../packages/skeleton/index.js';
 import Empty from '../packages/empty/index.js';
 import Affix from '../packages/affix/index.js';
+import InputIdCard from '../packages/input-id-card/index.js';
+import InputPhone from '../packages/input-phone/index.js';
+import InputEmail from '../packages/input-email/index.js';
+import SwitchEnhance from '../packages/switch-enhance/index.js';
+import InputUrl from '../packages/input-url/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
@@ -188,6 +193,11 @@ const components = [
   Skeleton,
   Empty,
   Affix,
+  InputIdCard,
+  InputPhone,
+  InputEmail,
+  SwitchEnhance,
+  InputUrl,
   CollapseTransition
 ];
 
@@ -324,5 +334,10 @@ export default {
   Panel,
   Skeleton,
   Empty,
-  Affix
+  Affix,
+  InputIdCard,
+  InputPhone,
+  InputEmail,
+  SwitchEnhance,
+  InputUrl
 };
