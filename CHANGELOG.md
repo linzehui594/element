@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.14.0](https://github.com/femessage/element/compare/v2.13.0...v2.14.0) (2020-01-15)
+
+
+### Features
+
+* 增加 edit-table 组件 ([#33](https://github.com/femessage/element/issues/33)) ([6f5abe8](https://github.com/femessage/element/commit/6f5abe8))
+* 新增 button-group-enhance 组件 ([#36](https://github.com/femessage/element/issues/36)) ([c2b1b9d](https://github.com/femessage/element/commit/c2b1b9d))
+
 ## [2.13.0](https://github.com/femessage/element/compare/v2.12.3...v2.13.0) (2020-01-09)
 
 
