@@ -373,6 +373,10 @@
               "title": "Affix 固钉"
             },
             {
+              "path": "/edit-table",
+              "title": "EditTable 可编辑表格组件"
+            },
+            {
               "path": "/switch-enhance",
               "title": "SwitchEnhance 开关增强"
             },
@@ -743,6 +747,10 @@
             {
               "path": "/input-id-card",
               "title": "InputIdCard"
+            },
+            {
+              "path": "/edit-table",
+              "title": "EditTable"
             },
             {
               "path": "/input-email",
@@ -1125,6 +1133,10 @@
               "title": "InputIdCard"
             },
             {
+			        "path": "/edit-table",
+              "title": "EditTable"
+            },
+            {
               "path": "/input-email",
               "title": "InputEmail"
             },
@@ -1502,6 +1514,10 @@
             {
               "path": "/input-id-card",
               "title": "InputIdCard"
+            },
+            {
+			        "path": "/edit-table",
+              "title": "EditTable"
             },
             {
               "path": "/input-email",
