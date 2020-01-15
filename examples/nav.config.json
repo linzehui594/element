@@ -373,8 +373,16 @@
               "title": "Affix 固钉"
             },
             {
+              "path": "/edit-table",
+              "title": "EditTable 可编辑表格组件"
+            },
+            {
               "path": "/switch-enhance",
               "title": "SwitchEnhance 开关增强"
+            },
+            {
+              "path": "/button-group-enhance",
+              "title": "ButtonGroupEnhance 可折叠按钮组"
             }
           ]
         }
@@ -741,6 +749,10 @@
               "title": "InputIdCard"
             },
             {
+              "path": "/edit-table",
+              "title": "EditTable"
+            },
+            {
               "path": "/input-email",
               "title": "InputEmail"
             },
@@ -751,6 +763,10 @@
             {
               "path": "/input-url",
               "title": "InputUrl"
+            },
+            {
+              "path": "/button-group-enhance",
+              "title": "ButtonGroupEnhance"
             }
           ]
         }
@@ -1117,6 +1133,10 @@
               "title": "InputIdCard"
             },
             {
+			        "path": "/edit-table",
+              "title": "EditTable"
+            },
+            {
               "path": "/input-email",
               "title": "InputEmail"
             },
@@ -1127,6 +1147,10 @@
             {
               "path": "/input-url",
               "title": "InputUrl"
+            },
+            {
+              "path": "/button-group-enhance",
+              "title": "ButtonGroupEnhance"
             }
           ]
         }
@@ -1492,6 +1516,10 @@
               "title": "InputIdCard"
             },
             {
+			        "path": "/edit-table",
+              "title": "EditTable"
+            },
+            {
               "path": "/input-email",
               "title": "InputEmail"
             },
@@ -1502,6 +1530,10 @@
             {
               "path": "/input-url",
               "title": "InputUrl"
+            },
+            {
+              "path": "/button-group-enhance",
+              "title": "ButtonGroupEnhance"
             }
           ]
         }
