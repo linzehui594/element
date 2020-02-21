@@ -5,7 +5,7 @@
     v-bind="$attrs"
     :prop="`data.${index}.${column.id}`"
   >
-    <p v-if="readonly">{{text}}</p>
+    <component v-if="readonly" :is="readonlyComponent" />
     <component
       v-else-if="column.type"
       :is="`el-${column.type}`"
@@ -32,7 +32,9 @@
 </template>
 
 <script>
-import { isFunction } from 'element-ui/src/utils/types';
+import { isFunction, isObject } from 'element-ui/src/utils/types';
+import { isVNode } from 'element-ui/src/utils/vdom';
+
 export default {
   name: 'FormInput',
   props: {
@@ -62,11 +64,26 @@ export default {
     }
   },
   computed: {
-    text() {
+    readonlyComponent() {
+      let cellValue = this.data[this.column.id];
+
+      let Component = {
+        render: h => h('p', null, cellValue)
+      };
+
       if (isFunction(this.column.formatter)) {
-        return this.column.formatter(this.data, this.index);
+        const formatted = this.column.formatter(this.data, cellValue, this.index);
+
+        if (isVNode(formatted)) {
+          Component = { render: h => formatted };
+        } else if (isObject(formatted)) {
+          Component = formatted;
+        } else {
+          cellValue = formatted;
+        }
       }
-      return this.data[this.column.id];
+
+      return Component;
     },
     inputAttrs() {
       if (isFunction(this.column.el)) {
