@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.15.0](https://github.com/femessage/element/compare/v2.14.0...v2.15.0) (2020-02-21)
+
+
+### Bug Fixes
+
+* 分页器的选择器可以被清空 ([#41](https://github.com/femessage/element/issues/41)) ([2be8b16](https://github.com/femessage/element/commit/2be8b16))
+
+
+### Features
+
+* **edit-table:** formatter 支持返回 `jsx` 和 自定义组件 ([#40](https://github.com/femessage/element/issues/40)) ([6c4d068](https://github.com/femessage/element/commit/6c4d068))
+
 ## [2.14.0](https://github.com/femessage/element/compare/v2.13.0...v2.14.0) (2020-01-15)
 
 
