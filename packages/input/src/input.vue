@@ -88,6 +88,7 @@
       v-else
       :tabindex="tabindex"
       class="el-textarea__inner"
+      :class="{'el-textarea__count': isWordLimitVisible}"
       @compositionstart="handleCompositionStart"
       @compositionupdate="handleCompositionUpdate"
       @compositionend="handleCompositionEnd"
