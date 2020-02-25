@@ -23,6 +23,10 @@
     border-radius: $--input-border-radius;
     transition: $--border-transition-base;
 
+    &.el-textarea__count {
+      padding-bottom: 20px;
+    }
+
     &::placeholder {
       color: $--input-placeholder-color;
     }
@@ -44,6 +48,7 @@
     font-size: 12px;
     bottom: 5px;
     right: 10px;
+    line-height: 1;
   }
 
   @include when(disabled) {
