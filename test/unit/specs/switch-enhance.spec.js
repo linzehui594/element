@@ -26,7 +26,7 @@ describe('SwitchEnhance', () => {
     core.click();
 
     setTimeout(() => {
-      expect(vm.value).to.equal(true);
+      expect(vm.value).to.equal(false);
       done();
     }, 10);
   });
