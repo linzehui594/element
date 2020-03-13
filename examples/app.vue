@@ -1,6 +1,6 @@
 <template>
   <div id="app" :class="{ 'is-component': isComponent }">
-    <main-header v-if="lang !== 'play'"></main-header>
+    <main-header v-if="lang !== 'play'&& `/${lang}` !== $route.path"></main-header>
     <div class="main-cnt">
       <router-view></router-view>
     </div>
@@ -15,7 +15,7 @@
   import esLocale from 'main/locale/lang/es';
   import frLocale from 'main/locale/lang/fr';
 
-  const lang = location.hash.replace('#', '').split('/')[1] || 'zh-CN';
+  const lang = location.hash.replace('#', '').split('/')[1] || '';
   const localize = lang => {
     switch (lang) {
       case 'en-US':
@@ -38,7 +38,7 @@
 
     computed: {
       lang() {
-        return this.$route.path.split('/')[1] || 'zh-CN';
+        return this.$route.path.split('/')[1] || '';
       },
       isComponent() {
         return /^component-/.test(this.$route.name || '');
