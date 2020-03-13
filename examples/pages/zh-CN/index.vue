@@ -316,7 +316,7 @@
   </div>
 </template>
 <script>
-  import compoLang from '../..//i18n/component.json';
+  import compoLang from '../../i18n/component.json';
 
   export default {
     computed: {
