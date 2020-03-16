@@ -32,13 +32,13 @@
         <div class="footer-main">
           <h4>{{ langConfig.more }}</h4>
           <a href="" class="footer-main-link" target="_blank">
-            <img src="~examples/assets/images/logo_serverless.png" alt="">DEEPEXI Serverless</a>
+            <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_serverless.png" alt="">DEEPEXI Serverless</a>
           <a href="" class="footer-main-link" target="_blank">
-            <img src="~examples/assets/images/logo_devops.png" alt="">DEEPEXI DevOps</a>
+            <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_devops.png" alt="">DEEPEXI DevOps</a>
           <a href="" class="footer-main-link" target="_blank">
-            <img src="~examples/assets/images/logo_daas.png" alt="">DEEPEXI DaaS</a>
+            <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_daas.png" alt="">DEEPEXI DaaS</a>
           <a href="" class="footer-main-link" target="_blank">
-            <img src="~examples/assets/images/logo_spaas.png" alt="">DEEPEXI SPaaS</a>
+            <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_spaas.png" alt="">DEEPEXI SPaaS</a>
         </div>
       </div>
 
@@ -55,13 +55,13 @@
     width: 100%;
     margin-top: -340px;
     box-sizing: border-box;
-    height: 340px;
+    /*height: 340px;*/
 
     .container {
       box-sizing: border-box;
       width: 1140px;
       height: 100%;
-      padding: 40px 30px;
+      padding: 56px 30px 30px 30px;
     }
 
 

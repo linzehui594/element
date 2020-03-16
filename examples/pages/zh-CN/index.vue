@@ -222,7 +222,7 @@
       <div class="container">
       <header class="header">
         <div class="header-left">
-          <img src="~examples/assets/images/logo_deepexi.png" alt="" class="logo">
+          <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_deepexi.png" alt="" class="logo">
           <h3>DEEPEXI Design</h3>
         </div>
 
@@ -270,42 +270,42 @@
         <div class="design-cards">
           <li>
             <div class="card">
-              <img src="~examples/assets/images/index_guide.png" alt="">
+              <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/index_guide.png" alt="">
               <h3>设计指南</h3>
               <p>辅助设计人员在设计过程中做出决策，搭建出结构合理、高效易用的产品。</p>
             </div>
           </li>
           <li>
             <div class="card">
-              <img src="~examples/assets/images/index_principle.png" alt="">
+              <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/index_principle.png" alt="">
               <h3>设计原则</h3>
               <p>提供普适、抽象的评判标准和方向，为设计问题提供行之有效的向导或提示。</p>
             </div>
           </li>
           <li>
             <div class="card">
-              <img src="~examples/assets/images/index_component.png" alt="">
+              <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/index_component.png" alt="">
               <h3>组件</h3>
               <p>使用前端框架封装的代码帮助工程师快速开发；覆盖大部分使用场景，满足各种功能需求。</p>
             </div>
           </li>
           <li>
             <div class="card">
-              <img src="~examples/assets/images/index_schema.png" alt="">
+              <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/index_schema.png" alt="">
               <h3>设计原则</h3>
               <p>提供普适、抽象的评判标准和方向，为设计问题提供行之有效的向导或提示。</p>
             </div>
           </li>
           <li>
             <div class="card">
-              <img src="~examples/assets/images/index_subject.png" alt="">
+              <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/index_subject.png" alt="">
               <h3>主题</h3>
               <p>提供默认的蓝色主题；也可自定义主题，可视化定制和管理站点主题、组件样式。</p>
             </div>
           </li>
           <li>
             <div class="card">
-              <img src="~examples/assets/images/index_resource.png" alt="">
+              <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/index_resource.png" alt="">
               <h3>设计资源</h3>
               <p>提供 DEEPEXI Design 相关设计资源下载，可快速搭建高保真视觉稿，提升产品设计效率。</p>
             </div>
