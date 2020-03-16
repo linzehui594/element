@@ -19,14 +19,23 @@
     }
     
     > ul > .nav-item > a {
-      margin-top: 15px;
+      margin-top: 16px;
     }
 
-    > ul > .nav-item:nth-child(-n + 4) > a {
-      margin-top: 0;
+    .nav-arrow {
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 13px;
+      transform: rotate(180deg);
+      transition: transform 0.5s;
     }
 
     .nav-item {
+
+      &:first-child a {
+        margin-top: 0;
+      }
+
       a {
         font-size: 16px;
         color: #333;
@@ -49,7 +58,7 @@
         a {
           display: block;
           height: 40px;
-          color: #444;
+          color: #6A6C73;
           line-height: 40px;
           font-size: 14px;
           overflow: hidden;
@@ -94,13 +103,28 @@
           }
         }
       }
+
+      .item-single-title {
+        margin-left: 23px;
+      }
+    }
+
+    .side-child-menu {
+      margin-left: 15px;
+      border-left: 1px solid #F0F2F5;
+      padding-left: 15px;
+      margin-bottom: 16px;
+    }
+
+    .item-expand-title {
+      cursor: pointer;
     }
 
     .nav-group__title {
-      font-size: 12px;
-      color: #999;
-      line-height: 26px;
-      margin-top: 15px;
+      font-size: 16px;
+      color: #333;
+      line-height: 44px;
+      font-weight: bold;
     }
 
     #code-sponsor-widget {
@@ -141,8 +165,9 @@
         class="nav-item"
         v-for="(item, key) in data"
         :key="key">
-        <a v-if="!item.path && !item.href" @click="expandMenu">{{item.name}}</a>
-        <a v-if="item.href" :href="item.href" target="_blank">{{item.name}}</a>
+        <a v-if="!item.path && item.children" @click="expandMenu" class="item-expand-title"><i class="nav-arrow el-icon-arrow-down"></i>{{item.name}}</a>
+        <a v-if="!item.path && !item.children" class="item-single-title">{{item.name}}</a>
+        <a v-if="item.href" :href="item.href" target="_blank" class="item-single-title">{{item.name}}</a>
         <router-link
           v-if="item.path"
           active-class="active"
@@ -150,7 +175,7 @@
           exact
           v-text="item.title || item.name">
         </router-link>
-        <ul class="pure-menu-list sub-nav" v-if="item.children">
+        <ul class="pure-menu-list sub-nav side-child-menu" v-if="item.children">
           <li
             class="nav-item"
             v-for="(navItem, key) in item.children"
@@ -170,8 +195,8 @@
             v-for="(group, key) in item.groups"
             :key="key"
             >
-            <div class="nav-group__title" @click="expandMenu">{{group.groupName}}</div>
-            <ul class="pure-menu-list">
+            <div class="nav-group__title item-expand-title" @click="expandMenu"><i class="nav-arrow el-icon-arrow-down"></i>{{group.groupName}}</div>
+            <ul class="pure-menu-list side-child-menu">
               <li
                 class="nav-item"
                 v-for="(navItem, key) in group.list"
@@ -190,7 +215,7 @@
               class="nav-item"
               v-for="(navItem, key) in femessageNavs"
               :key="key">
-              <a :href="navItem.url" target="_blank">{{navItem.repoName | upperFirst}} {{navItem.title}}</a>
+              <a :href="navItem.url" class="item-single-title" target="_blank">{{navItem.repoName | upperFirst}} {{navItem.title}}</a>
             </li>
           </ul>
         </template>
@@ -221,9 +246,9 @@
       };
     },
     watch: {
-      '$route.path'() {
-        this.handlePathChange();
-      },
+      // '$route.path'() {
+      //   this.handlePathChange();
+      // },
       isFade(val) {
         bus.$emit('navFade', val);
       }
@@ -275,11 +300,17 @@
         });
       },
       expandMenu(event) {
-        if (!this.isSmallScreen) return;
+        // if (!this.isSmallScreen) return;
         let target = event.currentTarget;
         if (!target.nextElementSibling || target.nextElementSibling.tagName !== 'UL') return;
-        this.hideAllMenu();
-        event.currentTarget.nextElementSibling.style.height = 'auto';
+        // this.hideAllMenu();
+        if (target.nextElementSibling.style.height === 'auto') {
+          event.currentTarget.nextElementSibling.style.height = '0';
+          event.currentTarget.firstChild.style.transform = 'rotate(0deg)';
+        } else {
+          event.currentTarget.nextElementSibling.style.height = 'auto';
+          event.currentTarget.firstChild.style.transform = 'rotate(180deg)';
+        }
       },
 
       getFemessageNavs() {
@@ -316,6 +347,7 @@
     mounted() {
       this.handleResize();
       this.getFemessageNavs();
+      this.handlePathChange();
       window.addEventListener('resize', this.handleResize);
     },
     beforeDestroy() {

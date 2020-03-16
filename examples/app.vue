@@ -1,10 +1,10 @@
 <template>
-  <div id="app" :class="{ 'is-component': isComponent }">
+  <div id="app" :class="{ 'is-component': isComponent, 'is-guide': isGuide }">
     <main-header v-if="lang !== 'play'&& `/${lang}` !== $route.path"></main-header>
     <div class="main-cnt">
       <router-view></router-view>
     </div>
-    <main-footer v-if="lang !== 'play' && !isComponent"></main-footer>
+    <main-footer v-if="lang !== 'play' && !isComponent && !isGuide"></main-footer>
   </div>
 </template>
 
@@ -42,6 +42,9 @@
       },
       isComponent() {
         return /^component-/.test(this.$route.name || '');
+      },
+      isGuide() {
+        return /^guide-/.test(this.$route.name || '');
       }
     },
 

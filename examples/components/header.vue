@@ -13,11 +13,11 @@
     line-height: 80px;
     z-index: 100;
     position: relative;
+    box-shadow: 0 2px 8px 0 rgba(45,48,59,0.1);
 
     .container {
       height: 100%;
       box-sizing: border-box;
-      border-bottom: 1px solid #DCDFE6;
     }
 
     .nav-lang-spe {
@@ -48,6 +48,13 @@
         margin-left: 10px;
         border-radius: 3px;
       }
+    }
+
+    .logo-text {
+      font-size: 24px;
+      display: inline;
+      font-weight:bold;
+      line-height: 28px;
     }
 
     .nav {
@@ -82,13 +89,13 @@
       }
     }
 
-    .nav-logo,
-    .nav-logo-small {
-      vertical-align: sub;
+    .nav-logo,.logo-text{
+      vertical-align: middle;
     }
 
-    .nav-logo-small {
-      display: none;
+    .nav-logo {
+      width: 28px;
+      height: 28px;
     }
 
     .nav-item {
@@ -200,13 +207,21 @@
     width: auto;
   }
 
-  @media (max-width: 850px) {
+
+  @media (max-width: 1140px) {
     .header {
-      .nav-logo {
+      .logo-text {
         display: none;
       }
-      .nav-logo-small {
-        display: inline-block;
+
+    }
+  }
+
+
+  @media (max-width: 850px) {
+    .header {
+      .logo-text {
+        display: none;
       }
       .nav-item {
         margin-left: 6px;
@@ -273,13 +288,10 @@
           <!-- logo -->
           <slot>
             <img
-              src="../assets/images/element-logo.svg"
-              alt="element-logo"
+              src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_deepexi.png"
+              alt=""
               class="nav-logo">
-            <img
-              src="../assets/images/element-logo-small.svg"
-              alt="element-logo"
-              class="nav-logo-small">
+            <span class="logo-text">DEEPEXI Design</span>
           </slot>
 
         </router-link></h1>
@@ -292,7 +304,7 @@
           <li class="nav-item">
             <router-link
               active-class="active"
-              :to="`/${ lang }/guide`">{{ langConfig.guide }}
+              :to="`/${ lang }/guide`">{{ langConfig.designlang }}
             </router-link>
           </li>
           <li class="nav-item">
