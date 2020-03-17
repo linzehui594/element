@@ -149,7 +149,7 @@
   <el-scrollbar class="page-guide__scroll" ref="guideScrollBar">
     <div class="page-container page-guide">
       <el-scrollbar class="page-guide__nav">
-        <side-nav :data="navsData" :base="`/${ lang }/guide`"></side-nav>
+        <side-nav :data="navsData[lang]" :base="`/${ lang }/guide`"></side-nav>
       </el-scrollbar>
       <div class="page-guide__main">
         <div class="page-guide__content">
@@ -162,32 +162,14 @@
       </div>
     </div>
   </el-scrollbar>
-  <!--<div class="page-container page-guide">-->
-    <!--<el-row>-->
-      <!--<el-col :xs="24" :sm="5">-->
-        <!--<side-nav :data="navsData" :base="`/${ lang }/guide`"></side-nav>-->
-      <!--</el-col>-->
-      <!--<el-col :xs="24" :sm="19">-->
-        <!--<router-view class="content"></router-view>-->
-      <!--</el-col>-->
-    <!--</el-row>-->
-  <!--</div>-->
 </template>
 <script>
+  import navsData from '../../design.config.json';
   export default {
     data() {
       return {
         lang: this.$route.meta.lang,
-        navsData: [
-          {
-            path: '/design',
-            name: '设计原则'
-          },
-          {
-            path: '/nav',
-            name: '导航'
-          }
-        ]
+        navsData
       };
     },
     mounted() {

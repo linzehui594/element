@@ -171,6 +171,7 @@
         <router-link
           v-if="item.path"
           active-class="active"
+          class="item-single-title"
           :to="base + item.path"
           exact
           v-text="item.title || item.name">
