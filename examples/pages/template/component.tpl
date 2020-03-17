@@ -11,7 +11,7 @@
   .page-component {
     box-sizing: border-box;
     height: 100%;
-  
+
     &.page-container {
       padding: 0;
     }
@@ -23,8 +23,9 @@
       bottom: 0;
       margin-top: 80px;
       transition: padding-top .3s;
+      box-shadow: 1px 0 2px 0 rgba(220,222,230,1);
 
-      > .el-scrollbar__wrap {
+  > .el-scrollbar__wrap {
         height: 100%;
         overflow-x: auto;
       }
@@ -45,9 +46,13 @@
       }
     }
 
+    .page-component__main {
+      padding-left: 240px;
+    }
+
     .page-component__content {
-      padding-left: 270px;
-      padding-bottom: 100px;
+      padding-left: 30px;
+      /*padding-bottom: 32px;*/
       box-sizing: border-box;
     }
 
@@ -102,7 +107,18 @@
         }
       }
     }
+    .main-footer {
+      .footer {
+        margin-top: 0;
+        .container {
+          width: 900px;
+          margin: 0;
+        }
+      }
+    }
+
   }
+
 
   @media (max-width: 768px) {
     .page-component {
@@ -135,11 +151,17 @@
     <el-scrollbar class="page-component__nav">
       <side-nav :data="navsData[lang]" :base="`/${ lang }/component`"></side-nav>
     </el-scrollbar>
-    <div class="page-component__content">
-      <router-view class="content"></router-view>
-      <footer-nav></footer-nav>
+    <div class="page-component__main">
+      <div class="page-component__content">
+        <router-view class="content"></router-view>
+        <footer-nav></footer-nav>
+      </div>
+      <div class="main-footer">
+        <main-footer></main-footer>
+      </div>
     </div>
-    <el-backtop 
+
+    <el-backtop
       v-if="showBackToTop"
       target=".page-component__scroll .el-scrollbar__wrap"
       :right="100"

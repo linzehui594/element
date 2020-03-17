@@ -183,7 +183,7 @@
         scrollTop: 0,
         showHeader: true,
         componentScrollBar: null,
-        componentScrollBoxElement: null,
+        componentScrollBoxElement: null
       };
     },
     watch: {
