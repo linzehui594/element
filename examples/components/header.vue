@@ -13,11 +13,11 @@
     line-height: 80px;
     z-index: 100;
     position: relative;
+    box-shadow: 0 2px 8px 0 rgba(45,48,59,0.1);
 
     .container {
       height: 100%;
       box-sizing: border-box;
-      border-bottom: 1px solid #DCDFE6;
     }
 
     .nav-lang-spe {
@@ -70,7 +70,6 @@
       position: relative;
       width: 1px;
       height: 80px;
-      padding: 0 20px;
 
       &::before {
         content: '';
@@ -82,17 +81,12 @@
       }
     }
 
-    .nav-logo,
-    .nav-logo-small {
-      vertical-align: sub;
-    }
-
-    .nav-logo-small {
-      display: none;
+    .nav-logo {
+     vertical-align: middle;
     }
 
     .nav-item {
-      margin: 0;
+      margin: 0 22px;
       float: left;
       list-style: none;
       position: relative;
@@ -105,7 +99,7 @@
       &.lang-item,
       &:last-child {
         cursor: default;
-        margin-left: 34px;
+        /*margin-left: 34px;*/
 
         span {
           opacity: .8;
@@ -129,14 +123,13 @@
 
       a {
         text-decoration: none;
-        color: #1989FA;
-        opacity: 0.5;
+        color: #2D303B;
         display: block;
-        padding: 0 22px;
+        padding: 0;
 
         &.active,
         &:hover {
-          opacity: 1;
+          color: #1989FA;
         }
 
         &.active::after {
@@ -144,13 +137,17 @@
           display: inline-block;
           position: absolute;
           bottom: 0;
-          left: calc(50% - 15px);
-          width: 30px;
+          left: 0;
+          width: 100%;
           height: 2px;
           background: #5D81F9;
         }
       }
     }
+
+   .nav-versions {
+     margin: 0;
+   }
   }
 
   .nav-dropdown {
@@ -200,14 +197,13 @@
     width: auto;
   }
 
+
+  @media (max-width: 1140px) {
+  }
+
+
   @media (max-width: 850px) {
     .header {
-      .nav-logo {
-        display: none;
-      }
-      .nav-logo-small {
-        display: inline-block;
-      }
       .nav-item {
         margin-left: 6px;
 
@@ -273,15 +269,10 @@
           <!-- logo -->
           <slot>
             <img
-              src="../assets/images/element-logo.svg"
-              alt="element-logo"
+              src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo.svg"
+              alt=""
               class="nav-logo">
-            <img
-              src="../assets/images/element-logo-small.svg"
-              alt="element-logo"
-              class="nav-logo-small">
           </slot>
-
         </router-link></h1>
 
         <!-- nav -->
@@ -292,7 +283,7 @@
           <li class="nav-item">
             <router-link
               active-class="active"
-              :to="`/${ lang }/guide`">{{ langConfig.guide }}
+              :to="`/${ lang }/guide`">{{ langConfig.designlang }}
             </router-link>
           </li>
           <li class="nav-item">
@@ -301,14 +292,14 @@
               :to="`/${ lang }/component`">{{ langConfig.components }}
             </router-link>
           </li>
-          <li
-            class="nav-item nav-item-theme"
-          >
-            <router-link
-              active-class="active"
-              :to="`/${ lang }/theme`">{{ langConfig.theme }}
-            </router-link>
-          </li>
+          <!--<li-->
+            <!--class="nav-item nav-item-theme"-->
+          <!--&gt;-->
+            <!--<router-link-->
+              <!--active-class="active"-->
+              <!--:to="`/${ lang }/theme`">{{ langConfig.theme }}-->
+            <!--</router-link>-->
+          <!--</li>-->
           <li class="nav-item">
             <router-link
               active-class="active"
@@ -323,28 +314,28 @@
           </li>
 
           <!-- 版本选择器 -->
-          <li class="nav-item nav-versions" v-show="isComponentPage">
-            <el-dropdown
-              trigger="click"
-              class="nav-dropdown"
-              :class="{ 'is-active': verDropdownVisible }">
-              <span>
-                element: {{ elementVersion }}
-                <!-- <i class="el-icon-arrow-down el-icon--right"></i> -->
-              </span>
-              <el-dropdown-menu
-                slot="dropdown"
-                class="nav-dropdown-list"
-                @input="handleVerDropdownToggle">
-                <el-dropdown-item
-                  v-for="item in Object.keys(versions)"
-                  :key="item"
-                  @click.native="switchVersion(item)">
-                  {{ item }}
-                </el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
-          </li>
+          <!--<li class="nav-item nav-versions" v-show="isComponentPage">-->
+            <!--<el-dropdown-->
+              <!--trigger="click"-->
+              <!--class="nav-dropdown"-->
+              <!--:class="{ 'is-active': verDropdownVisible }">-->
+              <!--<span>-->
+                <!--element: {{ elementVersion }}-->
+                <!--&lt;!&ndash; <i class="el-icon-arrow-down el-icon&#45;&#45;right"></i> &ndash;&gt;-->
+              <!--</span>-->
+              <!--<el-dropdown-menu-->
+                <!--slot="dropdown"-->
+                <!--class="nav-dropdown-list"-->
+                <!--@input="handleVerDropdownToggle">-->
+                <!--<el-dropdown-item-->
+                  <!--v-for="item in Object.keys(versions)"-->
+                  <!--:key="item"-->
+                  <!--@click.native="switchVersion(item)">-->
+                  <!--{{ item }}-->
+                <!--</el-dropdown-item>-->
+              <!--</el-dropdown-menu>-->
+            <!--</el-dropdown>-->
+          <!--</li>-->
 
           <li class="nav-item nav-versions" v-show="isComponentPage">
             <div class="nav-dropdown el-dropdown">

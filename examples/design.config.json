@@ -1,0 +1,50 @@
+{
+  "zh-CN": [
+    {
+      "name": "DEEPEXI Design",
+      "children": [
+        {
+          "path": "/",
+          "name": "介绍"
+        },
+        {
+          "path": "/changelog",
+          "name": "更新日志"
+        },
+        {
+          "path": "/",
+          "name": "设计价值观"
+        },
+        {
+          "path": "/",
+          "name": "无障碍"
+        }
+      ]
+    },
+    {
+      "path": "/design",
+      "name": "设计原则"
+    },
+    {
+      "name": "模式",
+      "children": [
+        {
+          "path": "/nav",
+          "name": "导航"
+        },
+        {
+          "path": "/",
+          "name": "数据录入"
+        },
+        {
+          "path": "/",
+          "name": "数据展示"
+        },
+        {
+          "path": "/",
+          "name": "反馈"
+        }
+      ]
+    }
+  ]
+}

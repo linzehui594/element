@@ -1,72 +1,95 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <div class="footer-main">
-        <h4>{{ langConfig.links }}</h4>
-        <a href="https://github.com/ElemeFE/element" class="footer-main-link" target="_blank">{{ langConfig.repo }}</a>
-        <a href="https://github.com/ElemeFE/element/releases" class="footer-main-link" target="_blank">{{ langConfig.changelog }}</a>
-        <a href="https://github.com/ElemeFE/element/blob/dev/FAQ.md" class="footer-main-link" target="_blank">{{ langConfig.faq }}</a>
-        <a href="https://github.com/ElementUI/element-starter" class="footer-main-link" target="_blank">{{ langConfig.starter }}</a>
-        <a :href="'/#/' + lang + '/component/custom-theme'" class="footer-main-link" target="_blank">{{ langConfig.theme }}</a>
-        <a href="https://github.com/elemefe/element-react" class="footer-main-link" target="_blank">Element-React</a>
-        <a href="https://github.com/ElemeFE/element-angular" class="footer-main-link" target="_blank">Element-Angular</a>
+      <div class="footer-content">
+        <!--链接-->
+        <div class="footer-main">
+          <h4>{{ langConfig.links }}</h4>
+          <a href="" class="footer-main-link" target="_blank">{{ langConfig.dida }}</a>
+          <a href="https://github.com/FEMessage/create-nuxt-app" class="footer-main-link" target="_blank">create-nuxt-app</a>
+          <a href="https://www.yuque.com/sc0cqi/ys9h7c/ywfbln" class="footer-main-link" target="_blank">Flutter</a>
+          <a href="https://github.com/FEMessage/vue-sfc-cli" class="footer-main-link" target="_blank">vue-sfc-cli</a>
+        </div>
+
+        <!--社区-->
+        <div class="footer-main">
+          <h4>{{ langConfig.community }}</h4>
+          <a href="" class="footer-main-link" target="_blank">{{ langConfig.gitter }}</a>
+          <a href="https://github.com/FEMessage/element/issues" class="footer-main-link" target="_blank">{{ langConfig.feedback }}</a>
+          <a href="https://medium.com/deepexi" class="footer-main-link" target="_blank">{{ langConfig.medium }}</a>
+          <a href="https://zhuanlan.zhihu.com/deepexi-frontend" class="footer-main-link" target="_blank">{{ langConfig.frontend }}</a>
+        </div>
+
+        <!--帮助-->
+        <div class="footer-main">
+          <h4>{{ langConfig.help }}</h4>
+          <a href="https://github.com/FEMessage/element" class="footer-main-link" target="_blank">GitHub</a>
+          <a href="https://github.com/FEMessage/element/releases" class="footer-main-link" target="_blank">{{ langConfig.update }}</a>
+          <a href="https://github.com/FEMessage/element/issues" class="footer-main-link" target="_blank">{{ langConfig.faq }}</a>
       </div>
-      <div class="footer-main">
-        <h4>{{ langConfig.community }}</h4>
-        <a :href="gitterLink" class="footer-main-link" target="_blank">{{ langConfig.gitter }}</a>
-        <a href="https://github.com/ElemeFE/element/issues" class="footer-main-link" target="_blank">{{ langConfig.feedback }}</a>
-        <a :href="`https://github.com/ElemeFE/element/blob/master/.github/CONTRIBUTING.${ lang }.md`" class="footer-main-link" target="_blank">{{ langConfig.contribution }}</a>
-        <a href="https://segmentfault.com/t/element-ui" class="footer-main-link" target="_blank">SegmentFault</a>
-        <a href="https://github.com/ElementUI/awesome-element" class="footer-main-link" target="_blank">Awesome Element</a>
+
+        <!--更多产品-->
+        <div class="footer-main">
+          <h4>{{ langConfig.more }}</h4>
+          <a href="https://cloud.deepexi.com/#/product/Serverless" class="footer-main-link" target="_blank">
+            <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_serverless.png" alt="">DEEPEXI Serverless</a>
+          <a href="https://cloud.deepexi.com/#/product/devops" class="footer-main-link" target="_blank">
+            <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_devops.png" alt="">DEEPEXI DevOps</a>
+          <a href="https://cloud.deepexi.com/#/product/daas" class="footer-main-link" target="_blank">
+            <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_daas.png" alt="">DEEPEXI DaaS</a>
+          <a href="https://cloud.deepexi.com/#/product/spaas" class="footer-main-link" target="_blank">
+            <img src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_spaas.png" alt="">DEEPEXI SPaaS</a>
+        </div>
       </div>
-      <div class="footer-social">
-        <p class="footer-social-title">Element {{ version && version.slice(0, 3) }} Fullerene</p>
-        <el-popover
-          ref="weixin"
-          placement="top"
-          width="120"
-          popper-class="footer-popover"
-          trigger="hover">
-          <div class="footer-popover-title">{{ langConfig.eleme }} UED</div>
-          <img src="../assets/images/qrcode.png" alt="">
-        </el-popover>
-        <i class="doc-icon-weixin elementdoc" v-popover:weixin></i>
-        <a href="https://github.com/elemefe" target="_blank">
-          <i class="doc-icon-github elementdoc"></i>
-        </a>
-        <a :href="gitterLink" target="_blank">
-          <i class="doc-icon-gitter elementdoc"></i>
-        </a>
-      </div>
+
+      <div class="line"></div>
+      <copyright></copyright>
+
     </div>
   </footer>
 </template>
 
 <style lang="scss">
   .footer {
-    background-color: #F7FBFD;
+    background-color: #F5F6F9;
     width: 100%;
-    padding: 40px 150px;
-    margin-top: -340px;
+    margin-top: -361px;
     box-sizing: border-box;
-    height: 340px;
+    height: 361px;
 
     .container {
       box-sizing: border-box;
-      width: auto;
+      width: 1140px;
+      height: 100%;
+      padding: 56px 30px 30px 30px;
+    }
+
+
+    .footer-content {
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      padding-bottom: 80px;
+      justify-content: space-between;
     }
 
     .footer-main {
       font-size: 0;
       display: inline-block;
       vertical-align: top;
-      margin-right: 110px;
 
       h4 {
         font-size: 18px;
         color: #333;
         line-height: 1;
         margin: 0 0 15px 0;
+      }
+
+      img {
+        width: 16px;
+        height: 16px;
+        margin-right: 3px;
+        vertical-align: sub;
       }
 
       .footer-main-link {
@@ -82,78 +105,46 @@
       }
     }
 
-    .footer-social {
-      float: right;
-      text-align: right;
-
-      .footer-social-title {
-        color: #666;
-        font-size: 18px;
-        line-height: 1;
-        margin: 0 0 20px 0;
-        padding: 0;
-        font-weight: bold;
-      }
-
-      .elementdoc {
-        transition: .3s;
-        display: inline-block;
-        line-height: 32px;
-        text-align: center;
-        color: #c8d6e8;
-        background-color: transparent;
-        size: 32px;
-        font-size: 32px;
-        vertical-align: middle;
-        margin-right: 20px;
-        &:hover {
-          transform: scale(1.2);
-          color: #8D99AB;
-        }
-      }
-
-      .doc-icon-gitter {
-        margin-right: 0;
-      }
+    .line {
+      height: 1px;
+      margin: 0 auto;
+      background-color: #ddd;
     }
   }
 
-  .el-popover.footer-popover {
-    padding: 0;
-    min-width: 120px;
-    line-height: normal;
-    box-shadow: 0 0 11px 0 rgba(174, 187, 211, 0.24);
-
-    .footer-popover-title {
-      border-bottom: solid 1px #eaeefb;
-      height: 30px;
-      line-height: 30px;
-      text-align: center;
-      color: #99a9bf;
-      background-color: #f8f9fe;
-    }
-
-    img {
-      size: 100px;
-      margin: 10px;
-    }
-  }
   @media (max-width: 1140px) {
     .footer {
-      height: auto;
-    }
-  }
+      width: 100%;
 
-  @media (max-width: 1000px) {
-    .footer-social {
-      display: none;
+      .container {
+        padding: 30px;
+        width: 100%;
+      }
     }
   }
 
   @media (max-width: 768px) {
     .footer {
+      width: 100%;
+      height: auto;
+
       .footer-main {
         margin-bottom: 30px;
+      }
+
+      .footer-main-link {
+        display: inline-block !important;
+        width: 50%;
+        white-space: nowrap;
+      }
+
+      .container {
+        padding: 30px;
+        width: 100%;
+      }
+      .footer-content {
+        flex-direction: column;
+        padding-bottom: 0;
       }
     }
   }
@@ -161,14 +152,15 @@
 
 <script type="text/babel">
   import compoLang from '../i18n/component.json';
-  import Element from 'main/index.js';
-  const { version } = Element;
+  import copyright from './copyright.vue';
 
   export default {
     data() {
       return {
-        version
       };
+    },
+    components: {
+      copyright
     },
 
     computed: {
@@ -178,10 +170,6 @@
 
       langConfig() {
         return compoLang.filter(config => config.lang === this.lang)[0]['footer'];
-      },
-
-      gitterLink() {
-        return this.lang === 'zh-CN' ? 'https://gitter.im/ElemeFE/element' : 'https://gitter.im/element-en/Lobby';
       }
     }
   };

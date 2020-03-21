@@ -11,7 +11,7 @@
   .page-component {
     box-sizing: border-box;
     height: 100%;
-  
+
     &.page-container {
       padding: 0;
     }
@@ -23,8 +23,9 @@
       bottom: 0;
       margin-top: 80px;
       transition: padding-top .3s;
+      box-shadow: 1px 0 0 0 rgba(220,222,230,1);
 
-      > .el-scrollbar__wrap {
+  > .el-scrollbar__wrap {
         height: 100%;
         overflow-x: auto;
       }
@@ -45,9 +46,13 @@
       }
     }
 
+    .page-component__main {
+      padding-left: 240px;
+    }
+
     .page-component__content {
-      padding-left: 270px;
-      padding-bottom: 100px;
+      padding-left: 100px;
+      padding-right: 50px;
       box-sizing: border-box;
     }
 
@@ -102,10 +107,23 @@
         }
       }
     }
+    .footer {
+      margin-top: 0;
+      width: calc(100vw - 240px - (100vw - 1140px) / 2);
+      .container {
+        width: 900px;
+        margin: 0;
+        padding: 56px 30px 30px 50px;
+      }
+    }
   }
+
 
   @media (max-width: 768px) {
     .page-component {
+      .page-component__main {
+        padding-left: 0;
+      }
       .page-component__nav {
         width: 100%;
         position: static;
@@ -126,6 +144,14 @@
         overflow: auto;
         display: block;
       }
+      .footer {
+        margin-top: 0;
+        width: 100%;
+        .container {
+          width: 100%;
+          margin: 0;
+        }
+      }
     }
   }
 </style>
@@ -135,11 +161,15 @@
     <el-scrollbar class="page-component__nav">
       <side-nav :data="navsData[lang]" :base="`/${ lang }/component`"></side-nav>
     </el-scrollbar>
-    <div class="page-component__content">
-      <router-view class="content"></router-view>
-      <footer-nav></footer-nav>
+    <div class="page-component__main">
+      <div class="page-component__content">
+        <router-view class="content"></router-view>
+        <footer-nav></footer-nav>
+      </div>
+      <main-footer></main-footer>
     </div>
-    <el-backtop 
+
+    <el-backtop
       v-if="showBackToTop"
       target=".page-component__scroll .el-scrollbar__wrap"
       :right="100"

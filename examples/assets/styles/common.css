@@ -7,7 +7,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 
-  &.is-component {
+  &.is-component, &.is-guide {
     overflow: hidden;
   }
 }
@@ -15,7 +15,7 @@ html, body {
 #app {
   height: 100%;
   
-  &.is-component {
+  &.is-component, &.is-guide {
     overflow-y: hidden;
 
     .main-cnt {
@@ -71,8 +71,7 @@ button, input, select, textarea {
 }
 
 .main-cnt {
-  margin-top: -80px;
-  padding: 80px 0 340px;
+  padding: 0 0 361px;
   box-sizing: border-box;
   min-height: 100%;
 }
@@ -87,11 +86,6 @@ button, input, select, textarea {
 .page-container {
   padding-top: 55px;
 
-  h2 {
-    font-size: 28px;
-    color: #1f2d3d;
-    margin: 0;
-  }
   h3 {
     font-size: 22px;
   }
@@ -113,6 +107,12 @@ button, input, select, textarea {
         opacity: .4;
       }
     }
+  }
+
+  h2 {
+    font-size: 40px;
+    color: #2D303B;
+    margin: 0;
   }
 
   p {
