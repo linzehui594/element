@@ -60,6 +60,19 @@
     float: right;
     margin-right: -4px;
   }
+
+  @media (max-width: 768px) {
+    .footer-nav-link {
+
+      &:hover {
+        color: #333643;
+
+        & i {
+          color: #333643;
+        }
+      }
+    }
+  }
 </style>
 
 <script>

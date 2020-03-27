@@ -124,50 +124,55 @@
       }
     }
   }
+  @media (max-width: 768px) {
+      .page-resource {
+        padding-top: 80px;
+      }
+   }
 </style>
 <template>
   <div class="page-container page-resource">
     <h2><%= 1 ></h2>
-    <!--<div class="resource-placeholder">-->
-      <!--<img src="~examples/assets/images/resource-placeholder.svg" alt="">-->
-      <!--<h4><%= placeholder1 ></h4>-->
-      <!--<p><%= placeholder2 ></p>-->
-    <!--</div>-->
-    
-    <p><%= placeholder2 ></p>
-    <div class="cards">
-      <ul class="container">
-        <li>
-          <div class="card">
-            <img src="~examples/assets/images/Axure-Components.svg" alt="">
-            <h3><%= 3 ></h3>
-            <p><%= 4 ></p>
-            <a
-              onclick="ga('send', 'event', 'ResourceDownload', 'Download', 'Axure');" 
-              href="https://github.com/ElementUI/Resources/raw/master/Element_Components_v2.0.0.rplib"
-            ><%= 5 ></a>
-          </div>
-        </li>
-        <li>
-          <div class="card">
-            <img src="~examples/assets/images/Sketch-Template.svg" alt="">
-            <h3><%= 6 ></h3>
-            <p><%= 7 ></p>
-            <a 
-              onclick="ga('send', 'event', 'ResourceDownload', 'Download', 'Sketch');"
-              href="https://github.com/ElementUI/Resources/raw/master/Element%20UI%20Kit_v2.0.sketch"
-            ><%= 5 ></a>
-          </div>
-        </li>
-        <!--<li>-->
-          <!--<div class="card">-->
-            <!--<img src="~examples/assets/images/Module.svg" alt="">-->
-            <!--<h3><%= 8 ></h3>-->
-            <!--<p><%= 9 ></p>-->
-            <!--<a href="https://github.com/ElementUI/Resources/raw/master/Element%20Components%20Documentation.zip"><%= 5 ></a>-->
-          <!--</div>-->
-        <!--</li>-->
-      </ul>
-    </div>
+    <div class="resource-placeholder">
+      <img src="~examples/assets/images/resource-placeholder.svg" alt="">
+      <h4><%= placeholder1 ></h4>
+      <p><%= placeholder2 ></p>
+   </div>
+
+    <!--<p><%= placeholder2 ></p>-->
+    <!--<div class="cards">-->
+          <!--<ul class="container">-->
+            <!--<li>-->
+              <!--<div class="card">-->
+                <!--<img src="~examples/assets/images/Axure-Components.svg" alt="">-->
+                <!--<h3><%= 3 ></h3>-->
+                <!--<p><%= 4 ></p>-->
+                <!--<a-->
+                        <!--onclick="ga('send', 'event', 'ResourceDownload', 'Download', 'Axure');"-->
+                        <!--href="https://github.com/ElementUI/Resources/raw/master/Element_Components_v2.0.0.rplib"-->
+                <!--&gt;<%= 5 ></a>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<div class="card">-->
+                <!--<img src="~examples/assets/images/Sketch-Template.svg" alt="">-->
+                <!--<h3><%= 6 ></h3>-->
+                <!--<p><%= 7 ></p>-->
+                <!--<a-->
+                        <!--onclick="ga('send', 'event', 'ResourceDownload', 'Download', 'Sketch');"-->
+                        <!--href="https://github.com/ElementUI/Resources/raw/master/Element%20UI%20Kit_v2.0.sketch"-->
+                <!--&gt;<%= 5 ></a>-->
+              <!--</div>-->
+            <!--</li>-->
+            <!--&lt;!&ndash;<li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="card">&ndash;&gt;-->
+            <!--&lt;!&ndash;<img src="~examples/assets/images/Module.svg" alt="">&ndash;&gt;-->
+            <!--&lt;!&ndash;<h3><%= 8 ></h3>&ndash;&gt;-->
+            <!--&lt;!&ndash;<p><%= 9 ></p>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="https://github.com/ElementUI/Resources/raw/master/Element%20Components%20Documentation.zip"><%= 5 ></a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+          <!--</ul>-->
+        <!--</div>-->
   </div>
 </template>
