@@ -120,8 +120,18 @@
     display: flex;
     align-items: center;
 
-    .logo {
-      width: 90%;
+    .deepexi-logo, .design-logo {
+      cursor: pointer;
+    }
+
+    .design-logo {
+      margin-top: 2px;
+    }
+
+    .dot {
+      color: white;
+      padding:0 5px;
+      font-weight: 700;
     }
   }
 
@@ -259,7 +269,9 @@
       <div class="container">
       <header class="header">
         <div class="header-left">
-          <img class="logo" src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_white.svg" alt="">
+          <img class="deepexi-logo" src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_white(1).svg" alt="" @click="toLink()">
+          <span class="dot">·</span>
+          <img class="design-logo" src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/Design.svg"/>
         </div>
 
         <i class="el-icon-menu" @click="handleOpen"></i>
@@ -383,6 +395,9 @@
       handleClose() {
         this.showNav = false;
         document.body.removeAttribute('overflow');
+      },
+      toLink() {
+        window.open('http://cloud.deepexi.top/#/');
       }
     },
     beforeDestroy() {

@@ -30,24 +30,24 @@
       font-size: 32px;
       font-weight: normal;
 
-      a {
-        color: #333;
-        text-decoration: none;
-        display: block;
-      }
+      // a {
+      //   color: #333;
+      //   text-decoration: none;
+      //   display: block;
+      // }
 
-      span {
-        font-size: 12px;
-        display: inline-block;
-        width: 34px;
-        height: 18px;
-        border: 1px solid rgba(255, 255, 255, .5);
-        text-align: center;
-        line-height: 18px;
-        vertical-align: middle;
-        margin-left: 10px;
-        border-radius: 3px;
-      }
+      // span {
+      //   font-size: 12px;
+      //   display: inline-block;
+      //   width: 34px;
+      //   height: 18px;
+      //   border: 1px solid rgba(255, 255, 255, .5);
+      //   text-align: center;
+      //   line-height: 18px;
+      //   vertical-align: middle;
+      //   margin-left: 10px;
+      //   border-radius: 3px;
+      // }
     }
 
     .nav {
@@ -81,11 +81,21 @@
       }
     }
 
-    .nav-logo {
+    .deepexi-logo {
      vertical-align: middle;
+     cursor: pointer;
     }
-    .small-logo {
-      display: none;
+
+    .dot {
+      font-weight: 700;
+      vertical-align: middle;
+      padding: 0 5px;
+      color: #000;
+    }
+
+    .design-logo {
+      vertical-align: middle;
+      margin-top: 2px;
     }
 
     .nav-item {
@@ -227,13 +237,23 @@
 
   @media (max-width: 768px) {
     .header {
-      .nav-logo {
-        display: none;
+      h1 {
+        width: 30%;
+        display: flex;
+        align-items: center;
       }
-      .small-logo {
-        display: block;
-        width: 22px;
-        height: 22px;
+      .deepexi-logo {
+        width: 66px;
+      }
+      
+      .dot {
+        font-weight: 500;
+      }
+
+      .design-logo {
+        width: 40px;
+        margin-bottom: 2px;
+        margin-top: 0;
       }
       .container {
         padding: 0 12px;
@@ -282,17 +302,19 @@
   <div class="headerWrapper">
     <header class="header" ref="header">
       <div class="container">
-        <h1><router-link :to="`/${ lang }`">
+        <h1>
           <!-- logo -->
           <slot>
             <img
-              src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo.svg"
-              alt=""
-              class="nav-logo">
-            <img class="small-logo" src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_small.svg" alt="">
-
+              src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/deepexi-logo.svg"
+              class="deepexi-logo" 
+              @click="toLink()">
+              <span class="dot">·</span>
+              <router-link :to="`/${ lang }`">
+                <img class="design-logo" src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/design-logo.svg" alt="">
+              </router-link>
           </slot>
-        </router-link></h1>
+        </h1>
 
         <!-- nav -->
         <ul class="nav">
@@ -503,6 +525,10 @@
 
       handleLangDropdownToggle(visible) {
         this.langDropdownVisible = visible;
+      },
+
+      toLink() {
+        window.open('http://cloud.deepexi.top/#/');
       }
     },
 

@@ -2,9 +2,11 @@
    <div class="popover-menu">
        <div class="popover-menu-container">
            <header class="header">
-               <div class="header-left">
-                   <img class="logo" src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_white.svg" alt="">
-               </div>
+                <div class="header-left">
+                <img class="deepexi-logo" src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/logo_white(1).svg" alt="" @click="toOfficial()">
+                <span class="dot">·</span>
+                <img class="design-logo" src="https://deepexi.oss-cn-shenzhen.aliyuncs.com/deepexi-design/Design.svg"/>
+                </div>
                <i class="el-icon-close" @click="handleClose"></i>
            </header>
            <div class="menu-list">
@@ -49,6 +51,9 @@
       methods: {
         handleClose() {
           this.$emit('handleClose');
+        },
+        toOfficial() {
+          window.open('http://cloud.deepexi.top/#/');
         }
       }
     };
@@ -79,14 +84,24 @@
       align-items: center;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
+  .header-left {
+    display: flex;
+    align-items: center;
 
-      .logo {
-          width: 90%;
-      }
+    .deepexi-logo, .design-logo {
+      cursor: pointer;
     }
+
+    .design-logo {
+      margin-top: 2px;
+    }
+
+    .dot {
+      color: white;
+      padding:0 5px;
+      font-weight: 700;
+    }
+  }
 
     .menu-list {
       color: #fff;
