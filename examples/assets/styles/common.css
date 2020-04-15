@@ -158,6 +158,17 @@ button, input, select, textarea {
 }
 
 @media (max-width: 768px) {
+  .headerWrapper {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1500;
+
+    .container {
+      padding: 0;
+    }
+  }
   .container,
   .page-container {
     padding: 0 20px;
