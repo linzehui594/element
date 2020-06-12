@@ -334,7 +334,7 @@
           if (xhr.readyState === 4 && xhr.status === 200) {
             const {data: navs} = JSON.parse(xhr.responseText);
             this.femessageNavs = navs.map(nav => {
-              nav.url = `https://serverless.deepexi.top/serverless-console/index.html#/material/${nav.repoName}`;
+              nav.url = `https://static.deepexi.top/serverless-console/index.html#/material/${nav.repoName}`;
               return nav;
             }).filter(nav => nav.lib && nav.lib.indexOf('element') > -1);
           }
